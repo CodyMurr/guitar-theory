@@ -8,10 +8,15 @@ export function TuningProvider({children}) {
         key: 'c',
         progression: 'major',
     });
+    const [formData, setFormData] = useState({
+        tuning: '',
+        key: '',
+        progression: '',
+    });
     // if signature.progression is set to 'major'
     const [mode, setMode] = useState('ionian');  // otherwise set to null
     
-    function changeSig(newTuning, newKey, newProgression, newMode) {
+    function changeSig(newTuning, newKey, newProgression) {
         setSignature({
             ...signature,
             tuning: newTuning,
@@ -24,7 +29,7 @@ export function TuningProvider({children}) {
         setMode(newMode);
     }
 
-    return <TuningContext.Provider value={{ signature, mode, changeSig, changeMode  }}>
+    return <TuningContext.Provider value={{ signature, mode, formData, setFormData, changeSig, changeMode  }}>
         {children}
     </TuningContext.Provider>
 }

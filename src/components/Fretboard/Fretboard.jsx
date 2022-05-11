@@ -6,6 +6,5 @@ import Form from '../Form/Form';
 export default function Fretboard() {
     const {signature} = useContext(TuningContext);
     return <div className="Fretboard flex">
-        <Form/>
         </div>
 }
