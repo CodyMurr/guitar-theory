@@ -1,10 +1,14 @@
 import './App.css';
+import { TuningProvider } from '../../context/TuningContext'
+import Fretboard from '../../components/Fretboard/Fretboard';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <TuningProvider>
+      <div className="App flex col">
+          <Fretboard />
+      </div>
+    </TuningProvider>
   );
 }
 
