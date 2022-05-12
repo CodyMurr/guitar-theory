@@ -18,6 +18,8 @@
 }
 .fb-container .tuner .note {
     z-index: 3;
+    background-color: #ffbf00;
+    color: #4f4f4f;
 }
 
 .fb-container .Fretboard {
