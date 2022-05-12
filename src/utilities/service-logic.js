@@ -40,17 +40,35 @@ export const progressions = {
 };
 
 export const fretStyles = {
-	group1: {
+	1: {
 		frets: [1, 2, 3, 4],
 		width: '10.5%',
 	},
-	group2: {
+	2: {
 		frets: [5, 6, 7, 8],
 		width: '8.5%',
 	},
-	group3: {
+	3: {
 		frets: [9, 10, 11, 12],
 		width: '6%',
+	},
+};
+
+export const dots = {
+	1: {
+		2: <span className='dot'></span>,
+	},
+	2: {
+		0: <span className='dot'></span>,
+		2: <span className='dot'></span>,
+	},
+	3: {
+		0: <span className='dot'></span>,
+		3: (
+			<ul className='octave flex col'>
+				<li className='dot'></li>-<li className='dot'></li>
+			</ul>
+		),
 	},
 };
 

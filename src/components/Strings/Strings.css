@@ -1,0 +1,15 @@
+.Strings {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+
+.Strings .string {
+    width: 90%;
+    height: 10px;
+    background-image: linear-gradient(#608589, #dedede, #608589);
+
+}

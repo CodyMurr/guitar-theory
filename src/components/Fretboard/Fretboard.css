@@ -9,11 +9,15 @@
 .fb-container .tuner {
     height: 250px;
     width: 10%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-color: #242424;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
-    padding-left: 2%;
+    padding-left: .5%;
+    box-shadow:  3px 3px 3px #242424;
+}
+.fb-container .tuner .note {
+    z-index: 3;
 }
 
 .fb-container .Fretboard {
@@ -27,8 +31,24 @@
 }
 
 .fb-container .Fretboard .fret {
+    position: relative;
     border-right: 2px solid #b1b1b1;
     border-radius: .5em;
     align-items: center;
     justify-content: space-evenly;
+}
+.fb-container .Fretboard .fret .dot {
+    position: absolute;
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    background-color: #99b4b2;
+}
+
+.fb-container .Fretboard .fret .octave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
