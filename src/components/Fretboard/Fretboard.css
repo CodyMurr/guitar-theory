@@ -3,6 +3,7 @@
     height: 50%;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .fb-container .tuner {
@@ -13,18 +14,6 @@
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
     padding-left: 2%;
-}
-.fb-container .tuner .note {
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    background-color: #004cff;
-    color: #dedede;
-    border-radius: 50%;
-    font-size: 1.5em;
-    font-weight: 700;
-    /* margin-left: 2%; */
 }
 
 .fb-container .Fretboard {
@@ -40,4 +29,6 @@
 .fb-container .Fretboard .fret {
     border-right: 2px solid #b1b1b1;
     border-radius: .5em;
+    align-items: center;
+    justify-content: space-evenly;
 }

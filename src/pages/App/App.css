@@ -20,3 +20,14 @@
   justify-content: center;
 }
 
+.note {
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  background-color: #004cff;
+  color: #dedede;
+  border-radius: 50%;
+  font-size: 1.05em;
+  font-weight: 700;
+}
