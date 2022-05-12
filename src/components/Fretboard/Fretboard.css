@@ -1,5 +1,43 @@
-.Fretboard {
+.fb-container {
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.fb-container .tuner {
+    height: 250px;
+    width: 10%;
+    justify-content: space-evenly;
+    background-color: #242424;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    padding-left: 2%;
+}
+.fb-container .tuner .note {
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: #004cff;
+    color: #dedede;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: 700;
+    /* margin-left: 2%; */
+}
+
+.fb-container .Fretboard {
     width: 80%;
-    height: 220px;
-    border: 2px solid;
+    height: 250px;
+    /* border: 2px solid; */
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: #0d0b08b9;
+    /* overflow: scroll; */
+}
+
+.fb-container .Fretboard .fret {
+    border-right: 2px solid #b1b1b1;
+    border-radius: .5em;
 }

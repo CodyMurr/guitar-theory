@@ -9,7 +9,7 @@ function App() {
     <TuningProvider>
       <div className="App flex col">
           <Fretboard />
-            <DataDisplay />
+          <DataDisplay />
       </div>
     </TuningProvider>
   );

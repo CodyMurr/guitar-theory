@@ -50,3 +50,18 @@ export function getScale(root, prog) {
     }
     return scaleArr;
 }
+
+export const fretStyles = {
+    group1: {
+        frets: [1, 2, 3, 4],
+        width: '10.5%'
+    },
+    group2:  {
+        frets: [5, 6, 7, 8],
+        width: '8.5%'
+    },
+    group3: {
+        frets: [9, 10, 11, 12],
+        width: '6%'
+    }
+}
