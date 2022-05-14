@@ -35,6 +35,7 @@ export const tunings = {
 };
 
 export const progressions = {
+	// list step patterns for each type of progression
 	major: [2, 2, 1, 2, 2, 2],
 	minor: [2, 1, 2, 2, 1, 2],
 };

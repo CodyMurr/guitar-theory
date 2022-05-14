@@ -1,6 +1,7 @@
 import './DataDisplay.css';
 import { useContext, useState } from 'react';
 import { capitalize } from '../../utilities/helper-functions';
+import { FaCog } from 'react-icons/fa';
 import Modal from 'react-modal';
 import TuningContext from '../../context/TuningContext';
 import Form from '../Form/Form';
@@ -23,22 +24,32 @@ export default function DataDisplay() {
 
 	return (
 		<div className='DataDisplay flex col'>
-			<Modal isOpen={modalIsOpen}>
-				<Form closeModal={closeModal} />
-			</Modal>
 			{sigCats.map((s) => (
 				<section className='flex' key={capitalize(s)}>
 					<strong>{capitalize(s)}:&nbsp;</strong>
 					<p>{capitalize(signature[s])}</p>
 				</section>
 			))}
-			<div className='toggle-mode flex' onClick={switchContent}>
-				<span className={content === 1 && 'content'}>Scale</span>
-				<span className={content === -1 && 'content'}>Chords</span>
+			<div
+				className='toggle flex'
+				onClick={() => switchContent(content)}>
+				<span className={content === 1 ? 'content' : null}>
+					Scale
+				</span>
+				<span
+					className={content === -1 ? 'content' : null}
+					onClick={switchContent}>
+					Chords
+				</span>
 			</div>
-			<div className='settings flex'>
-				<p onClick={openModal}>Go to Settings</p>
-			</div>
+
+			<button className='flex' onClick={openModal}>
+				<FaCog size={25} color='#6b6b6b' />
+				&nbsp;Settings
+			</button>
+			<Modal isOpen={modalIsOpen} className='settings-modal flex col'>
+				<Form closeModal={closeModal} />
+			</Modal>
 		</div>
 	);
 }

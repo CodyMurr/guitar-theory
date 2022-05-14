@@ -12,9 +12,9 @@ import TuningContext from '../../context/TuningContext';
 export default function Form({ closeModal }) {
 	const {
 		signature,
-		mode,
+		// mode,
 		changeSig,
-		changeMode,
+		// changeMode,
 		formData,
 		setFormData,
 	} = useContext(TuningContext);
@@ -58,9 +58,16 @@ export default function Form({ closeModal }) {
 					</select>
 				</label>
 			))}
-			{signature.progression === 'major' && (
-				<select name='mode'>{modeNames}</select>
-			)}
+
+			<label className='flex col'>
+				Mode&nbsp;
+				<select
+					name='mode'
+					disabled={formData.progression === 'major' ? true : false}>
+					<option value={null}>Select Mode...</option>
+					{modeNames}
+				</select>
+			</label>
 			<button type='submit'>Save</button>
 		</form>
 	);

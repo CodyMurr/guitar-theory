@@ -5,11 +5,9 @@ import {
 	fretStyles,
 	dots,
 	getFretNotes,
-	getScale,
 } from '../../utilities/service-logic';
 import { capitalize } from '../../utilities/helper-functions';
 import TuningContext from '../../context/TuningContext';
-import Form from '../Form/Form';
 import Strings from '../Strings/Strings';
 
 export default function Fretboard() {

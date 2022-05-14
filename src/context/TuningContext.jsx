@@ -15,6 +15,7 @@ export function TuningProvider({ children }) {
 	});
 	// if signature.progression is set to 'major'
 	const [mode, setMode] = useState('ionian'); // otherwise set to null
+
 	// to toggle between rendering scale and chords
 	const [content, setContent] = useState(1); // options are 1 & -1
 
@@ -31,8 +32,8 @@ export function TuningProvider({ children }) {
 		setMode(newMode);
 	}
 
-	function switchContent() {
-		setContent(content * -1);
+	function switchContent(cont) {
+		setContent((cont *= -1));
 	}
 
 	return (
