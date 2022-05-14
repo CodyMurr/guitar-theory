@@ -10,7 +10,7 @@
     height: 250px;
     width: 10%;
     justify-content: space-around;
-    background-color: #242424;
+    background-color: #272727;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
     padding-left: .5%;
@@ -18,8 +18,7 @@
 }
 .fb-container .tuner .note {
     z-index: 3;
-    background-color: #ffbf00;
-    color: #4f4f4f;
+    
 }
 
 .fb-container .Fretboard {
@@ -44,7 +43,7 @@
     width: 25px;
     height:25px;
     border-radius: 50%;
-    background-color: #99b4b2;
+    background-color: #fafafa;
 }
 
 .fb-container .Fretboard .fret .octave {

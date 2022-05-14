@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { getScale } from '../utilities/service-logic';
 
 const TuningContext = createContext();
 
@@ -19,6 +20,8 @@ export function TuningProvider({ children }) {
 	// to toggle between rendering scale and chords
 	const [content, setContent] = useState(1); // options are 1 & -1
 
+	const [scale, setScale] = useState([]);
+
 	function changeSig(newTuning, newKey, newProgression) {
 		setSignature({
 			...signature,
@@ -36,6 +39,11 @@ export function TuningProvider({ children }) {
 		setContent((cont *= -1));
 	}
 
+	function renderScale(key, prog) {
+		const newScale = getScale(key, prog);
+		setScale(newScale);
+	}
+
 	return (
 		<TuningContext.Provider
 			value={{
@@ -43,10 +51,12 @@ export function TuningProvider({ children }) {
 				mode,
 				formData,
 				content,
+				scale,
 				setFormData,
 				changeSig,
 				changeMode,
 				switchContent,
+				renderScale,
 			}}>
 			{children}
 		</TuningContext.Provider>

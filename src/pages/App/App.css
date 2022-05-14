@@ -40,6 +40,16 @@
   visibility: hidden;
 }
 
+.active-root {
+  background-color: #ffbf00;
+  color: #4f4f4f;
+}
+
+.disabled-root {
+  background-color: #999999;
+  color: #4f4f4f;
+}
+
 ul {
   list-style: none;
   padding-left: 0;

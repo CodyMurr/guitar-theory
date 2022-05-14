@@ -9,7 +9,7 @@ import Form from '../Form/Form';
 Modal.setAppElement('#root');
 
 export default function DataDisplay() {
-	const { signature, content, switchContent } =
+	const { signature, content, switchContent, renderScale } =
 		useContext(TuningContext);
 	const sigCats = Object.keys(signature);
 	const [modalIsOpen, setIsOpen] = useState(false);
@@ -22,6 +22,14 @@ export default function DataDisplay() {
 		setIsOpen(false);
 	}
 
+	function handleScale() {
+		switchContent(content);
+		renderScale(signature.key, signature.progression);
+	}
+	function handleChords() {
+		switchContent(content);
+	}
+
 	return (
 		<div className='DataDisplay flex col'>
 			{sigCats.map((s) => (
@@ -30,15 +38,13 @@ export default function DataDisplay() {
 					<p>{capitalize(signature[s])}</p>
 				</section>
 			))}
-			<div
-				className='toggle flex'
-				onClick={() => switchContent(content)}>
+			<div className='toggle flex' onClick={handleScale}>
 				<span className={content === 1 ? 'content' : null}>
 					Scale
 				</span>
 				<span
 					className={content === -1 ? 'content' : null}
-					onClick={switchContent}>
+					onClick={handleChords}>
 					Chords
 				</span>
 			</div>

@@ -42,6 +42,11 @@ export default function Form({ closeModal }) {
 		setTimeout(() => {
 			closeModal();
 		}, 500);
+		setFormData({
+			tuning: '',
+			key: '',
+			progression: '',
+		});
 	}
 	return (
 		<form className='Form flex col' onSubmit={handleSubmit}>
@@ -63,12 +68,15 @@ export default function Form({ closeModal }) {
 				Mode&nbsp;
 				<select
 					name='mode'
-					disabled={formData.progression === 'major' ? true : false}>
+					disabled={formData.progression === 'major' ? false : true}>
 					<option value={null}>Select Mode...</option>
 					{modeNames}
 				</select>
 			</label>
 			<button type='submit'>Save</button>
+			<p className='cancel' onClick={closeModal}>
+				Cancel
+			</p>
 		</form>
 	);
 }
