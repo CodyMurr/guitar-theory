@@ -44,6 +44,10 @@ export function TuningProvider({ children }) {
 		setScale(newScale);
 	}
 
+	function clear() {
+		setScale(null);
+	}
+
 	return (
 		<TuningContext.Provider
 			value={{
@@ -57,6 +61,7 @@ export function TuningProvider({ children }) {
 				changeMode,
 				switchContent,
 				renderScale,
+				clear,
 			}}>
 			{children}
 		</TuningContext.Provider>

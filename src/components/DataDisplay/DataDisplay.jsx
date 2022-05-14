@@ -9,8 +9,10 @@ import Form from '../Form/Form';
 Modal.setAppElement('#root');
 
 export default function DataDisplay() {
-	const { signature, content, switchContent, renderScale } =
-		useContext(TuningContext);
+	const {
+		signature,
+		/*content, switchContent, renderScale,*/ clear,
+	} = useContext(TuningContext);
 	const sigCats = Object.keys(signature);
 	const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -22,23 +24,23 @@ export default function DataDisplay() {
 		setIsOpen(false);
 	}
 
-	function handleScale() {
-		switchContent(content);
-		renderScale(signature.key, signature.progression);
-	}
-	function handleChords() {
-		switchContent(content);
-	}
+	// function handleScale() {
+	// 	switchContent(content);
+	// 	renderScale(signature.key, signature.progression);
+	// }
+	// function handleChords() {
+	// 	switchContent(content);
+	// }
 
 	return (
-		<div className='DataDisplay flex col'>
+		<div className='DataDisplay flex'>
 			{sigCats.map((s) => (
-				<section className='flex' key={capitalize(s)}>
+				<section className='flex col' key={capitalize(s)}>
 					<strong>{capitalize(s)}:&nbsp;</strong>
 					<p>{capitalize(signature[s])}</p>
 				</section>
 			))}
-			<div className='toggle flex' onClick={handleScale}>
+			{/* <div className='toggle flex col' onClick={handleScale}>
 				<span className={content === 1 ? 'content' : null}>
 					Scale
 				</span>
@@ -47,12 +49,16 @@ export default function DataDisplay() {
 					onClick={handleChords}>
 					Chords
 				</span>
+			</div> */}
+			<div className='btns flex col'>
+				<button className='flex' onClick={openModal}>
+					<FaCog size={25} color='#6b6b6b' />
+					&nbsp;Settings
+				</button>
+				<button className='flex' onClick={clear}>
+					Clear
+				</button>
 			</div>
-
-			<button className='flex' onClick={openModal}>
-				<FaCog size={25} color='#6b6b6b' />
-				&nbsp;Settings
-			</button>
 			<Modal isOpen={modalIsOpen} className='settings-modal flex col'>
 				<Form closeModal={closeModal} />
 			</Modal>

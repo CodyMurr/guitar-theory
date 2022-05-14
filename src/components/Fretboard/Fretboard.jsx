@@ -34,29 +34,32 @@ export default function Fretboard() {
 				))}
 			</section>
 			<section className='Fretboard flex'>
-				{frets.map((group) =>
-					fretStyles[group].frets.map((f, idx) => (
-						<section
-							className=' fret flex col'
-							key={`${f}.${idx}`}
-							style={{
-								width: fretStyles[group].width,
-							}}>
-							{dots[group][idx]}
-							{tunings[signature.tuning].map((note, root) => (
-								<span
-									className={`note flex ${
-										scale.includes(fretNotes[root][f - 1])
-											? 'active'
-											: 'disabled'
-									}`}
-									key={Math.random() * 1000}>
-									{capitalize(fretNotes[root][f - 1])}
-								</span>
-							))}
-						</section>
-					)),
-				)}
+				{frets &&
+					frets.map((group) =>
+						fretStyles[group].frets.map((f, idx) => (
+							<section
+								className=' fret flex col'
+								key={`${f}.${idx}`}
+								style={{
+									width: fretStyles[group].width,
+								}}>
+								{dots[group][idx]}
+								{signature.tuning &&
+									tunings[signature.tuning].map((note, root) => (
+										<span
+											className={`note flex ${
+												scale &&
+												scale.includes(fretNotes[root][f - 1])
+													? 'active'
+													: 'disabled'
+											}`}
+											key={Math.random() * 1000}>
+											{capitalize(fretNotes[root][f - 1])}
+										</span>
+									))}
+							</section>
+						)),
+					)}
 			</section>
 		</div>
 	);

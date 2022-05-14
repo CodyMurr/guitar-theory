@@ -17,6 +17,7 @@ export default function Form({ closeModal }) {
 		// changeMode,
 		formData,
 		setFormData,
+		renderScale,
 	} = useContext(TuningContext);
 	const selects = Object.keys(signature);
 	const progs = Object.keys(progressions);
@@ -41,6 +42,7 @@ export default function Form({ closeModal }) {
 		if (Object.values(formData).includes('')) return;
 		changeSig(formData.tuning, formData.key, formData.progression);
 		setTimeout(() => {
+			renderScale(formData.key, formData.progression);
 			closeModal();
 		}, 500);
 		setFormData({

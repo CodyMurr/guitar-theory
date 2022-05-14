@@ -5,14 +5,14 @@ import DataDisplay from '../../components/DataDisplay/DataDisplay';
 import Fretboard from '../../components/Fretboard/Fretboard';
 
 function App() {
-  return (
-    <TuningProvider>
-      <div className="App flex col">
-          <Fretboard />
-          <DataDisplay />
-      </div>
-    </TuningProvider>
-  );
+	return (
+		<TuningProvider>
+			<div className='App flex col'>
+				<DataDisplay />
+				<Fretboard />
+			</div>
+		</TuningProvider>
+	);
 }
 
 export default App;
