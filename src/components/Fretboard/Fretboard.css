@@ -18,6 +18,7 @@
 }
 .fb-container .tuner .note {
     z-index: 3;
+    width: 60px;
     
 }
 
@@ -37,6 +38,10 @@
     border-radius: .5em;
     align-items: center;
     justify-content: space-evenly;
+}
+.fb-container .Fretboard .fret .note {
+  width: 40px;
+
 }
 .fb-container .Fretboard .fret .dot {
     position: absolute;

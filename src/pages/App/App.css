@@ -24,12 +24,12 @@
   justify-content: center;
   align-items: center;
   height: 30px;
-  width: 60px;
   background-color: #004cff;
   color: #dedede;
   border-radius: 1em;
   font-size: 1.05em;
   font-weight: 700;
+  z-index: 99;
 }
 
 .active {

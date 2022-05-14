@@ -38,6 +38,7 @@ export default function Form({ closeModal }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
+		if (Object.values(formData).includes('')) return;
 		changeSig(formData.tuning, formData.key, formData.progression);
 		setTimeout(() => {
 			closeModal();
