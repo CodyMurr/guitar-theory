@@ -11,7 +11,7 @@ import TuningContext from '../../context/TuningContext';
 import Strings from '../Strings/Strings';
 
 export default function Fretboard() {
-	const { signature, scale } = useContext(TuningContext);
+	const { signature, scale, allNotes } = useContext(TuningContext);
 
 	const frets = Object.keys(fretStyles);
 
@@ -26,7 +26,7 @@ export default function Fretboard() {
 					tunings[signature.tuning].map((note, rootIdx) => (
 						<span
 							className={`flex note ${
-								scale && scale.includes(note)
+								(scale && scale.includes(note)) || allNotes
 									? 'active-root'
 									: 'disabled-root'
 							}`}
@@ -51,8 +51,9 @@ export default function Fretboard() {
 									tunings[signature.tuning].map((note, root) => (
 										<span
 											className={`note flex ${
-												scale &&
-												scale.includes(fretNotes[root][f - 1])
+												(scale &&
+													scale.includes(fretNotes[root][f - 1])) ||
+												allNotes
 													? 'active'
 													: 'disabled'
 											}`}

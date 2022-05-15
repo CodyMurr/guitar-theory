@@ -73,16 +73,6 @@ export const dots = {
 	},
 };
 
-export const modes = [
-	'ionian',
-	'dorian',
-	'phrygian',
-	'lydian',
-	'mixolydian',
-	'aeolian',
-	'locrian',
-];
-
 export function baseNotes(root) {
 	let idx = notes.indexOf(root);
 	return notes.slice(idx + 1).concat(notes.slice(0, idx + 1));

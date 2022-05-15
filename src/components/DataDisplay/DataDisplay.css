@@ -13,7 +13,7 @@
 
 .DataDisplay section {
     height: 100%;
-    width: 25%;
+    width: 20%;
     align-items: center;
     justify-content: center;
     /* border: 2px solid; */
@@ -28,20 +28,18 @@
     color: #eb5e28;
 }
 
-.DataDisplay .btns {
-    width: 30%;
-    height: 100%;
+.DataDisplay label {
+    width: 20%;
+    justify-content: space-around;
 }
 
-.DataDisplay .btns button {
-    letter-spacing: 3px;
-    width: 50%;
-    height: 100%;
-    background-color: #e0dcdc;
-    color: #ca0101;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    font-weight: 600;
-    border-radius: 5px;
+.DataDisplay label .show {
+    width: 40%;
+    transform: scale(1.4);
 }
+
+.DataDisplay label .show option {
+    font-weight: 600;
+    cursor: pointer;
+}
+
