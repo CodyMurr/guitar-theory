@@ -1,0 +1,25 @@
+.Navbar {
+    width: 60%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.Navbar ul {
+    width: 75%;
+    /* border: 3px solid; */
+    justify-content: space-between;
+}
+
+.Navbar ul li {
+    width: 25%;
+    /* border: 3px solid; */
+}
+.Navbar ul li .link {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #d8d8d8;
+    font-size: 1.25em;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import './Form.css';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
 	notes,
 	tunings,
@@ -9,7 +10,8 @@ import {
 import { capitalize } from '../../utilities/helper-functions';
 import TuningContext from '../../context/TuningContext';
 
-export default function Form({ closeModal }) {
+export default function Form() {
+	const navigate = useNavigate();
 	const {
 		signature,
 		// mode,
@@ -43,13 +45,13 @@ export default function Form({ closeModal }) {
 		changeSig(formData.tuning, formData.key, formData.progression);
 		setTimeout(() => {
 			renderScale(formData.key, formData.progression);
-			closeModal();
 		}, 500);
 		setFormData({
 			tuning: '',
 			key: '',
 			progression: '',
 		});
+		navigate('/');
 	}
 	return (
 		<form className='Form flex col' onSubmit={handleSubmit}>
@@ -77,7 +79,7 @@ export default function Form({ closeModal }) {
 				</select>
 			</label>
 			<button type='submit'>Save</button>
-			<p className='cancel' onClick={closeModal}>
+			<p className='cancel' onClick={() => navigate('/')}>
 				Cancel
 			</p>
 		</form>

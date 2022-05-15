@@ -1,67 +1,26 @@
 import './DataDisplay.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import { FaUndo } from 'react-icons/fa';
 import { capitalize } from '../../utilities/helper-functions';
-import { FaCog } from 'react-icons/fa';
-import Modal from 'react-modal';
 import TuningContext from '../../context/TuningContext';
-import Form from '../Form/Form';
-
-Modal.setAppElement('#root');
 
 export default function DataDisplay() {
-	const {
-		signature,
-		/*content, switchContent, renderScale,*/ clear,
-	} = useContext(TuningContext);
+	const { signature, clear, display } = useContext(TuningContext);
 	const sigCats = Object.keys(signature);
-	const [modalIsOpen, setIsOpen] = useState(false);
-
-	function openModal() {
-		setIsOpen(true);
-	}
-
-	function closeModal() {
-		setIsOpen(false);
-	}
-
-	// function handleScale() {
-	// 	switchContent(content);
-	// 	renderScale(signature.key, signature.progression);
-	// }
-	// function handleChords() {
-	// 	switchContent(content);
-	// }
 
 	return (
 		<div className='DataDisplay flex'>
-			{sigCats.map((s) => (
-				<section className='flex col' key={capitalize(s)}>
-					<strong>{capitalize(s)}:&nbsp;</strong>
-					<p>{capitalize(signature[s])}</p>
+			{sigCats.map((s, idx) => (
+				<section className='flex ' key={capitalize(s)}>
+					<strong className='flex'>
+						{capitalize(s)}:&nbsp;<p className='flex'>{display[s]}</p>
+					</strong>
 				</section>
 			))}
-			{/* <div className='toggle flex col' onClick={handleScale}>
-				<span className={content === 1 ? 'content' : null}>
-					Scale
-				</span>
-				<span
-					className={content === -1 ? 'content' : null}
-					onClick={handleChords}>
-					Chords
-				</span>
-			</div> */}
-			<div className='btns flex col'>
-				<button className='flex' onClick={openModal}>
-					<FaCog size={25} color='#6b6b6b' />
-					&nbsp;Settings
-				</button>
-				<button className='flex' onClick={clear}>
-					Clear
-				</button>
-			</div>
-			<Modal isOpen={modalIsOpen} className='settings-modal flex col'>
-				<Form closeModal={closeModal} />
-			</Modal>
+
+			<section className='btns flex'>
+				<FaUndo />
+			</section>
 		</div>
 	);
 }

@@ -8,8 +8,8 @@
 }
 
 .Strings .string {
-    width: 90%;
+    width: 100%;
     height: 10px;
-    background-image: linear-gradient(#697778, #dedede, #697778);
+    background-image: linear-gradient(#838383, #cccccc, #838383);
 
 }

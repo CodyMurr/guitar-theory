@@ -1,16 +1,17 @@
 .fb-container {
     width: 100%;
     height: 50%;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
+    margin-top: 0;
 }
 
 .fb-container .tuner {
     height: 250px;
     width: 10%;
     justify-content: space-around;
-    background-color: #272727;
+    background-color: #4f4f4f;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
     padding-left: .5%;
@@ -23,12 +24,13 @@
 }
 
 .fb-container .Fretboard {
-    width: 80%;
+    width: 90%;
     height: 250px;
     /* border: 2px solid; */
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
-    background-color: #0d0b08b9;
+    background-color: #6c4100f2;
+    box-shadow:  5px 5px 5px #242424;
     /* overflow: scroll; */
 }
 

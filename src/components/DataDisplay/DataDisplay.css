@@ -1,88 +1,47 @@
 .DataDisplay {
-    width: 85%;
-    height: 10%;
-    border: 5px solid #aeacac;
-
-    border-radius: 1.3em;
-    /* padding: 3%; */
-    justify-content: space-evenly;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 3%;
+    background-color: #d8d8d8;
+    color: #303030;
+    margin: 0;
+    justify-content: space-around;
     align-items: center;
+
 }
 
 .DataDisplay section {
-    height: 80%;
-    width: 20%;
-    /* margin: 3%; */
-    /* border: 5px solid #aeacac; */
-    
-    border-radius: .5em;
-    justify-content: space-between;
+    height: 100%;
+    width: 25%;
     align-items: center;
+    justify-content: center;
+    /* border: 2px solid; */
+    
 }
 
 .DataDisplay section strong {
-    border-bottom: 3px solid #aeacac;
-    /* border-radius: .2em; */
-    width: 80%;
-    text-align: center;
-}
-.DataDisplay section strong, 
-.DataDisplay section p {
-    font-size: 1.5em;
-}
-/* 
-.DataDisplay .toggle {
-    width: 20%;
-    height: 90%;
-    justify-content: space-around;
-    align-items: center;
-    border: 5px solid #aeacac;
-    border-radius: .5em;
-    cursor: pointer;
-    position: relative;
-    margin-bottom: 5%;
-}
-
-.DataDisplay .toggle span {
-    width: 100%;
-    height: 100%;
-    border-radius: .2em;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.15em;
-    font-weight: 600;
+    width: 100%;
 }
-.DataDisplay .toggle span.content {
-    background-color: #0022ff;
-    color: #dfd400;
-}  */
+.DataDisplay section strong p {
+    color: #eb5e28;
+}
 
 .DataDisplay .btns {
-    width: 15%;
-    height: 80%;
-    justify-content: space-around;
+    width: 30%;
+    height: 100%;
 }
 
 .DataDisplay .btns button {
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 1.25em;
-}
-
-.settings-modal {
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%; */
+    letter-spacing: 3px;
     width: 50%;
-    height: 30vh;
+    height: 100%;
+    background-color: #e0dcdc;
+    color: #ca0101;
     justify-content: center;
-    background-color: #42555b;
-    color: #c4c4c4;
-    padding: 2%;
-    margin: 0 auto;
-    margin-top: 50%;
-    border-radius: 1em;
-    z-index: 99;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    border-radius: 5px;
 }

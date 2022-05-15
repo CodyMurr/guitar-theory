@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
-import { getScale } from '../utilities/service-logic';
+import { tunings, getScale } from '../utilities/service-logic';
+import { capitalize } from '../utilities/helper-functions';
 
 const TuningContext = createContext();
 
@@ -21,6 +22,12 @@ export function TuningProvider({ children }) {
 	const [content, setContent] = useState(1); // options are 1 & -1
 
 	const [scale, setScale] = useState([]);
+
+	const display = {
+		tuning: <p>{tunings[signature.tuning].join('').toUpperCase()}</p>,
+		key: <p>{capitalize(signature.key)}</p>,
+		progression: <p>{capitalize(signature.progression)}</p>,
+	};
 
 	function changeSig(newTuning, newKey, newProgression) {
 		setSignature({
@@ -56,6 +63,7 @@ export function TuningProvider({ children }) {
 				formData,
 				content,
 				scale,
+				display,
 				setFormData,
 				changeSig,
 				changeMode,

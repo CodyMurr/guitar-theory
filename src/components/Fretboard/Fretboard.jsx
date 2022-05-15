@@ -20,19 +20,22 @@ export default function Fretboard() {
 	return (
 		<div className='fb-container flex'>
 			<Strings />
+
 			<section className='tuner flex col'>
-				{tunings[signature.tuning].map((note, rootIdx) => (
-					<span
-						className={`flex note ${
-							scale && scale.includes(note)
-								? 'active-root'
-								: 'disabled-root'
-						}`}
-						key={rootIdx}>
-						{capitalize(note)}
-					</span>
-				))}
+				{signature.tuning &&
+					tunings[signature.tuning].map((note, rootIdx) => (
+						<span
+							className={`flex note ${
+								scale && scale.includes(note)
+									? 'active-root'
+									: 'disabled-root'
+							}`}
+							key={rootIdx}>
+							{capitalize(note)}
+						</span>
+					))}
 			</section>
+
 			<section className='Fretboard flex'>
 				{frets &&
 					frets.map((group) =>
