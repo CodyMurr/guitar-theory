@@ -10,22 +10,14 @@ export function TuningProvider({ children }) {
 		key: 'c',
 		progression: 'major',
 	});
+
 	const [formData, setFormData] = useState({
 		tuning: '',
 		key: '',
 		progression: '',
 	});
-	// if signature.progression is set to 'major'
-	const [mode, setMode] = useState(); // otherwise set to null
-
-	// to toggle between rendering scale, notes, and chords
-	const [content, setContent] = useState(null);
 
 	const [scale, setScale] = useState([]);
-
-	const [allNotes, setAllNotes] = useState(false);
-
-	// const [chords, setChords] = useState(null)
 
 	const display = {
 		tuning: <p>{tunings[signature.tuning].join('').toUpperCase()}</p>,
@@ -42,28 +34,21 @@ export function TuningProvider({ children }) {
 		});
 	}
 
-	function changeMode(newMode) {
-		setMode(newMode);
-	}
-
-	function switchContent(newContent) {
-		setContent(newContent);
+	function renderScale(newKey, prog) {
+		setScale(getScale(newKey, prog));
 	}
 
 	return (
 		<TuningContext.Provider
 			value={{
 				signature,
-				mode,
 				formData,
-				content,
 				scale,
 				display,
-				allNotes,
 				setFormData,
+				setScale,
 				changeSig,
-				changeMode,
-				switchContent,
+				renderScale,
 			}}>
 			{children}
 		</TuningContext.Provider>

@@ -5,7 +5,7 @@ import {
 	notes,
 	tunings,
 	progressions,
-	modes,
+	getScale,
 } from '../../utilities/service-logic';
 import { capitalize } from '../../utilities/helper-functions';
 import TuningContext from '../../context/TuningContext';
@@ -14,22 +14,17 @@ export default function Form() {
 	const navigate = useNavigate();
 	const {
 		signature,
-		// mode,
 		changeSig,
-		// changeMode,
 		formData,
 		setFormData,
+		setScale,
 		renderScale,
 	} = useContext(TuningContext);
 	const selects = Object.keys(signature);
 	const progs = Object.keys(progressions);
 	const tuningNames = Object.keys(tunings);
+
 	const vals = [tuningNames, notes, progs];
-	const modeNames = modes.map((m) => (
-		<option value={m} key={m}>
-			{capitalize(m)}
-		</option>
-	));
 
 	function handleChange(e) {
 		e.preventDefault();
@@ -43,15 +38,15 @@ export default function Form() {
 		e.preventDefault();
 		if (Object.values(formData).includes('')) return;
 		changeSig(formData.tuning, formData.key, formData.progression);
+		renderScale(formData.key, formData.progression);
 		setTimeout(() => {
-			renderScale(formData.key, formData.progression);
+			navigate('/');
 		}, 500);
 		setFormData({
 			tuning: '',
 			key: '',
 			progression: '',
 		});
-		navigate('/');
 	}
 	return (
 		<form className='Form flex col' onSubmit={handleSubmit}>
@@ -69,15 +64,6 @@ export default function Form() {
 				</label>
 			))}
 
-			<label className='flex col'>
-				Mode&nbsp;
-				<select
-					name='mode'
-					disabled={formData.progression === 'major' ? false : true}>
-					<option value={null}>Select Mode...</option>
-					{modeNames}
-				</select>
-			</label>
 			<button type='submit'>Save</button>
 			<p className='cancel' onClick={() => navigate('/')}>
 				Cancel

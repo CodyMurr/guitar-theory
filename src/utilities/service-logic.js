@@ -37,7 +37,12 @@ export const tunings = {
 export const progressions = {
 	// list step patterns for each type of progression
 	major: [2, 2, 1, 2, 2, 2],
-	minor: [2, 1, 2, 2, 1, 2],
+	'major pentatonic': [2, 2, 3, 2, 3],
+	'natural minor': [2, 1, 2, 2, 1, 2],
+	'harmonic minor': [2, 1, 2, 2, 1, 3],
+	'melodic minor': [2, 1, 2, 2, 2, 2],
+	'minor pentatonic': [3, 2, 2, 3],
+	'minor blues': [3, 2, 1, 1, 3],
 };
 
 export const fretStyles = {
@@ -67,7 +72,8 @@ export const dots = {
 		0: <span className='dot'></span>,
 		3: (
 			<ul className='octave flex col'>
-				<li className='dot'></li>-<li className='dot'></li>
+				<li className='dot'></li>
+				<li className='dot'></li>
 			</ul>
 		),
 	},

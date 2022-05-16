@@ -1,5 +1,5 @@
 import './Fretboard.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import {
 	tunings,
 	fretStyles,
@@ -11,8 +11,8 @@ import TuningContext from '../../context/TuningContext';
 import Strings from '../Strings/Strings';
 
 export default function Fretboard() {
-	const { signature, scale, allNotes } = useContext(TuningContext);
-
+	const { signature, scale } = useContext(TuningContext);
+	const [showAllNotes, setShowAllNotes] = useState(false);
 	const frets = Object.keys(fretStyles);
 
 	const fretNotes = getFretNotes(signature.tuning);
@@ -26,7 +26,7 @@ export default function Fretboard() {
 					tunings[signature.tuning].map((note, rootIdx) => (
 						<span
 							className={`flex note ${
-								(scale && scale.includes(note)) || allNotes
+								(scale && scale.includes(note)) || showAllNotes
 									? 'active-root'
 									: 'disabled-root'
 							}`}
@@ -53,7 +53,7 @@ export default function Fretboard() {
 											className={`note flex ${
 												(scale &&
 													scale.includes(fretNotes[root][f - 1])) ||
-												allNotes
+												showAllNotes
 													? 'active'
 													: 'disabled'
 											}`}

@@ -4,8 +4,7 @@ import { capitalize } from '../../utilities/helper-functions';
 import TuningContext from '../../context/TuningContext';
 
 export default function DataDisplay() {
-	const { signature, content, display, switchContent } =
-		useContext(TuningContext);
+	const { signature, display, scale } = useContext(TuningContext);
 	const sigCats = Object.keys(signature);
 
 	return (
@@ -17,6 +16,10 @@ export default function DataDisplay() {
 					</strong>
 				</section>
 			))}
+			{scale &&
+				scale.map((s, idx) => (
+					<strong key={idx}>{s.toUpperCase()}</strong>
+				))}
 		</div>
 	);
 }
