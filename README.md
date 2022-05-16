@@ -37,4 +37,8 @@ Deployed Site: [Six-String Theory](https://scalenotetheory.netlify.app/)
 
 - Include quiz feature to improve fretbard memory
 
+- Create custom dropdown components for form
+
+- Make fretboard component customizable for user
+
 - More to come...
