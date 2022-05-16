@@ -19,6 +19,8 @@ export function TuningProvider({ children }) {
 
 	const [scale, setScale] = useState([]);
 
+	const [currentMode, setCurrentMode] = useState('scale');
+
 	const display = {
 		tuning: <p>{tunings[signature.tuning].join('').toUpperCase()}</p>,
 		key: <p>{capitalize(signature.key)}</p>,
@@ -38,17 +40,22 @@ export function TuningProvider({ children }) {
 		setScale(getScale(newKey, prog));
 	}
 
+	function toggleMode(newMode) {
+		setCurrentMode(newMode);
+	}
+
 	return (
 		<TuningContext.Provider
 			value={{
 				signature,
 				formData,
 				scale,
+				currentMode,
 				display,
 				setFormData,
-				setScale,
 				changeSig,
 				renderScale,
+				toggleMode,
 			}}>
 			{children}
 		</TuningContext.Provider>

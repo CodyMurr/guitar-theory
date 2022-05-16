@@ -5,21 +5,14 @@ import {
 	notes,
 	tunings,
 	progressions,
-	getScale,
 } from '../../utilities/service-logic';
 import { capitalize } from '../../utilities/helper-functions';
 import TuningContext from '../../context/TuningContext';
 
 export default function Form() {
 	const navigate = useNavigate();
-	const {
-		signature,
-		changeSig,
-		formData,
-		setFormData,
-		setScale,
-		renderScale,
-	} = useContext(TuningContext);
+	const { signature, changeSig, formData, setFormData, renderScale } =
+		useContext(TuningContext);
 	const selects = Object.keys(signature);
 	const progs = Object.keys(progressions);
 	const tuningNames = Object.keys(tunings);

@@ -28,18 +28,23 @@
     color: #eb5e28;
 }
 
-.DataDisplay label {
+.DataDisplay .toggle {
     width: 20%;
     justify-content: space-around;
+    border: 4px solid #776f6c;
+    border-radius: 5px;
 }
 
-.DataDisplay label .show {
-    width: 40%;
-    transform: scale(1.4);
+.DataDisplay .toggle span {
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
-
-.DataDisplay label .show option {
+/* 
+.DataDisplay .toggle {
     font-weight: 600;
     cursor: pointer;
-}
+} */
+
 
